@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Андрей — частный инженер-электрик | Электромонтаж, тёплый пол, автоматизация</title>
+<meta name="description" content="Частный инженер-электрик Андрей: электромонтаж под ключ, сборка щитов, диагностика тёплого пола тепловизором с точностью до 1 см, промышленная автоматизация. 15+ лет опыта, работаю без посредников, официальная гарантия.">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%230F1012"/><path d="M18 4 8 18h6l-2 10L24 13h-7l1-9z" fill="%23F5A623"/></svg>'>
+<script>
+/* Маркер «JS работает»: прячем контент для анимации только при живых скриптах.
+   Страховка: если основной скрипт не запустится — через 4 секунды показываем всё как есть. */
+document.documentElement.classList.add('js');
+setTimeout(function(){ if(!window.__siteReady){ document.documentElement.classList.remove('js'); } }, 4000);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<!-- defer: скрипт иконок грузится в фоне и НИКОГДА не блокирует показ страницы -->
+<script defer src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+<style>
+/* ============ БАЗА ============ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-dark:#0C0D0F; --bg-dark2:#101113; --panel:#141519;
+  --paper:#F1EDE2; --paper2:#E9E4D4;
+  --ink:#191A1C; --ink-soft:#5E5B50;
+  --cream:#EFE9DB; --cream-soft:#A9A496;
+  --amber:#F5A623; --amber-deep:#9A6206; --amber-ink:#17130A;
+  --line-d:#282A2F; --line-l:#D6CFBB;
+  --f-head:'Oswald',sans-serif; --f-mono:'JetBrains Mono',monospace; --f-body:'IBM Plex Sans',sans-serif;
+}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--f-body);background:var(--bg-dark);color:var(--cream);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img,svg{display:block}
+button{font:inherit;background:none;border:0;cursor:pointer;color:inherit}
+::selection{background:var(--amber);color:var(--amber-ink)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px}
+.mono{font-family:var(--f-mono)}
+i[data-lucide]{display:inline-block}
+svg.lucide{width:1em;height:1em;stroke-width:2}
+
+/* тёмные и светлые секции */
+.dark{background:var(--bg-dark2);color:var(--cream)}
+.dark .sec-lead,.dark p{color:var(--cream-soft)}
+.light{background:var(--paper);color:var(--ink)}
+.light .sec-lead,.light p{color:var(--ink-soft)}
+
+/* паттерны «чертёжной сетки» */
+.hero{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cpath d='M44 0H0v44' fill='none' stroke='%23ffffff' stroke-opacity='.045'/%3E%3C/svg%3E")}
+.grid-paper{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cpath d='M44 0H0v44' fill='none' stroke='%23000000' stroke-opacity='.05'/%3E%3C/svg%3E")}
+
+/* ============ КНОПКИ ============ */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:17px 26px;border-radius:2px;transition:transform .18s ease,box-shadow .18s ease,background .18s,border-color .18s,color .18s;cursor:pointer}
+.btn svg.lucide{width:16px;height:16px}
+.btn-primary{background:var(--amber);color:var(--amber-ink);box-shadow:4px 4px 0 #6E4A0C}
+.btn-primary:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 #6E4A0C;background:#FFBE45}
+.btn-primary:active{transform:translate(0,0);box-shadow:2px 2px 0 #6E4A0C}
+.btn-ghost{border:1px solid #4A4C52;color:var(--cream)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+.light .btn-ghost{border-color:#B4AC95;color:var(--ink)}
+.light .btn-ghost:hover{border-color:var(--amber-deep);color:var(--amber-deep)}
+
+/* ============ НАВИГАЦИЯ ============ */
+.nav{position:fixed;inset:0 0 auto 0;z-index:90;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(12,13,15,.9);backdrop-filter:blur(12px);border-color:var(--line-d)}
+.nav-in{max-width:1220px;margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-mark{width:34px;height:34px;border:1px solid var(--amber);border-radius:3px;display:grid;place-items:center;color:var(--amber)}
+.brand-mark svg.lucide{width:17px;height:17px}
+.brand-name{font-family:var(--f-mono);font-size:13px;font-weight:700;letter-spacing:.14em}
+.brand-name span{color:var(--amber);padding:0 2px}
+.nav-links{display:flex;gap:30px}
+.nav-links a{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-soft);padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--amber);border-color:var(--amber)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-phone{display:flex;align-items:center;gap:9px;font-family:var(--f-mono);font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--cream)}
+.nav-phone:hover{color:var(--amber)}
+.nav-phone svg.lucide{width:15px;height:15px;color:var(--amber)}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--line-d);border-radius:3px;place-items:center;color:var(--cream)}
+.burger svg{width:19px;height:19px}
+.mmenu{position:fixed;inset:0;z-index:80;background:var(--bg-dark);display:flex;flex-direction:column;justify-content:center;padding:0 32px;gap:6px;transform:translateX(100%);transition:transform .35s cubic-bezier(.7,0,.3,1)}
+.mmenu.open{transform:none}
+.mmenu a{font-family:var(--f-head);font-size:clamp(30px,8vw,44px);font-weight:600;text-transform:uppercase;letter-spacing:.02em;padding:8px 0;border-bottom:1px solid var(--line-d);display:flex;justify-content:space-between;align-items:center;color:var(--cream)}
+.mmenu a:active{color:var(--amber)}
+.mmenu .mmeta{margin-top:28px;font-family:var(--f-mono);font-size:13px;color:var(--cream-soft)}
+
+/* ============ HERO ============ */
+.hero{padding:150px 0 70px;min-height:100svh;display:flex;align-items:center}
+.hero-in{max-width:1220px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;width:100%}
+.tag{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:22px}
+.hero-q{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-soft);margin-bottom:26px;padding-left:16px;border-left:2px solid var(--amber)}
+h1{font-family:var(--f-head);font-weight:600;text-transform:uppercase;font-size:clamp(42px,5.6vw,84px);line-height:1.03;letter-spacing:.01em;margin-bottom:28px}
+h1 .stroke{color:var(--amber)}
+@supports ((-webkit-text-stroke:1px black)){
+  h1 .stroke{color:transparent;-webkit-text-stroke:1.6px var(--amber)}
+}
+.hero .lead{max-width:520px;color:var(--cream-soft);margin-bottom:22px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:8px 0;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);margin-bottom:36px}
+.hero-facts li{display:flex;align-items:center}
+.hero-facts li+li::before{content:"";width:22px;height:1px;background:var(--amber);margin:0 14px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-panel{position:relative}
+.panel-cap{margin-top:16px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6E6A5E;text-align:center}
+
+/* SVG-щиток */
+#panelSvg{width:100%;max-width:480px;margin:0 auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45))}
+#panelSvg text{font-family:var(--f-mono)}
+.pn-box{fill:var(--panel);stroke:#2C2E34;stroke-width:1.5}
+.pn-inner{fill:none;stroke:#232529}
+.pn-cap{font-size:10px;fill:#8F8A7C;letter-spacing:.16em}
+.pn-right{text-anchor:end}
+.pn-center{text-anchor:middle}
+.pn-tiny{font-size:8px;fill:#7B7568;letter-spacing:.06em}
+.pn-device{fill:#191B20;stroke:#34373D;stroke-width:1.2}
+.pn-wire{stroke:#3B3E45;stroke-width:2;fill:none}
+.pn-bus{stroke:#45484F;stroke-width:5;stroke-linecap:square}
+.branch{stroke:#33363B;stroke-width:2;fill:none}
+.flow{stroke:var(--amber);stroke-width:1.7;fill:none;stroke-dasharray:5 9;animation:flow .75s linear infinite;opacity:0;transition:opacity .35s}
+.flow.live{opacity:1}
+@keyframes flow{to{stroke-dashoffset:-14}}
+.pn-flag-main{fill:#C8C2B2;transition:transform .3s cubic-bezier(.6,0,.3,1.4)}
+#mainSw.on .pn-flag-main{transform:translateY(-33px)}
+.flag{fill:#B7B1A1;transition:transform .25s cubic-bezier(.6,0,.3,1.4)}
+.brk.off .flag{transform:translateY(23px)}
+.dot{fill:#3A3D43;transition:fill .3s}
+.brk.on .dot{fill:var(--amber)}
+.clickable{cursor:pointer}
+.brk:hover .pn-device,#mainSw:hover .pn-device{stroke:var(--amber)}
+.pn-attention{fill:none;stroke:var(--amber);stroke-width:1.4;stroke-dasharray:4 5;animation:blink 1.6s ease-in-out infinite}
+.pn-attention.hidden{display:none}
+@keyframes blink{0%,100%{opacity:0}50%{opacity:.9}}
+.pn-net{fill:#3A3D43;transition:fill .3s}
+#panelSvg.on .pn-net{fill:var(--amber)}
+.pn-big{font-size:27px;font-weight:700;fill:var(--cream);letter-spacing:.03em;transition:color .3s}
+.pn-big.hot{fill:var(--amber)}
+.pn-scale{fill:none;stroke:#4A4D54;stroke-width:1.3}
+.pn-needle{stroke:var(--amber);stroke-width:2;stroke-linecap:round;transition:stroke .3s}
+.pn-pin{fill:#6E6A5E}
+.pn-status{font-size:9.5px;font-weight:700;fill:var(--cream-soft);letter-spacing:.12em}
+#panelSvg.on .pn-status{fill:var(--amber)}
+.pn-hint{font-size:8.5px;fill:#6E6A5E;letter-spacing:.06em}
+.load path,.load circle,.load rect,.load line{fill:none;stroke:#6E6A5E;stroke-width:1.6;transition:stroke .3s}
+.load text{font-size:9px;fill:#6E6A5E}
+.load.live path,.load.live circle,.load.live rect,.load.live line{stroke:var(--amber)}
+.load.live text{fill:var(--amber)}
+
+/* ============ БЕГУЩАЯ СТРОКА ============ */
+.marquee{border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);overflow:hidden;background:var(--bg-dark);padding:15px 0}
+.marquee-track{display:flex;width:max-content;animation:slide 34s linear infinite}
+.mgroup{display:flex;align-items:center;gap:34px;padding-right:34px}
+.mgroup span{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.18em;color:#7E7A6E;white-space:nowrap;text-transform:uppercase}
+.mgroup span.a{color:var(--amber)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ============ ОБЩЕЕ ДЛЯ СЕКЦИЙ ============ */
+section{padding:110px 0}
+.sec-head{margin-bottom:56px;max-width:840px}
+.sec-tag{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:18px}
+.dark .sec-tag{color:var(--amber)}
+h2{font-family:var(--f-head);font-weight:600;text-transform:uppercase;font-size:clamp(32px,4.2vw,54px);line-height:1.06;letter-spacing:.01em;margin-bottom:22px}
+.sec-lead{font-size:18px;max-width:680px}
+.dark strong{color:var(--amber);font-weight:600}
+.light strong{color:var(--amber-deep);font-weight:600}
+
+/* ============ АККОРДЕОН УСЛУГ ============ */
+.acc{border-top:1px solid var(--line-l)}
+.acc-item{border-bottom:1px solid var(--line-l)}
+.acc-head{width:100%;display:grid;grid-template-columns:70px 1fr 46px;gap:20px;align-items:center;padding:30px 0;text-align:left;transition:padding .25s}
+.acc-head:hover .acc-title{color:var(--amber-deep)}
+.acc-num{font-family:var(--f-mono);font-size:13px;color:var(--amber-deep);letter-spacing:.1em}
+.acc-title{font-family:var(--f-head);font-weight:600;text-transform:uppercase;font-size:clamp(21px,2.6vw,30px);line-height:1.1;letter-spacing:.01em;color:var(--ink);transition:color .2s}
+.acc-sub{font-size:14.5px;color:var(--ink-soft);margin-top:6px;font-family:var(--f-body);text-transform:none;letter-spacing:0}
+.acc-chev{width:44px;height:44px;border:1px solid #B4AC95;border-radius:3px;display:grid;place-items:center;color:var(--ink);transition:transform .35s,border-color .2s,background .2s,color .2s;justify-self:end}
+.acc-chev svg.lucide{width:18px;height:18px}
+.acc-item.open .acc-chev{transform:rotate(180deg);background:var(--amber);border-color:var(--amber);color:var(--amber-ink)}
+.acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.65,0,.3,1)}
+.acc-item.open .acc-body{grid-template-rows:1fr}
+.acc-inner{overflow:hidden}
+.acc-content{padding:4px 0 40px 90px;display:grid;gap:18px}
+.acc-content>p{max-width:760px}
+.acc-list{columns:2;column-gap:44px;max-width:900px}
+.acc-list li{break-inside:avoid;position:relative;padding:7px 0 7px 26px;font-size:15.5px;color:var(--ink-soft)}
+.acc-list li::before{content:"";position:absolute;left:0;top:16px;width:14px;height:2px;background:var(--amber-deep)}
+.acc-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* ============ ТЕПЛОВИЗОР ============ */
+.thermal{padding:110px 0}
+.th-stage{position:relative;height:clamp(420px,58vh,600px);border:1px solid var(--line-d);border-radius:4px;overflow:hidden;background:#0A0B0D;cursor:none;touch-action:none}
+.th-stage canvas{width:100%;height:100%;display:block}
+.th-corner{position:absolute;width:22px;height:22px;border:2px solid var(--amber);pointer-events:none}
+.th-corner.tl{top:14px;left:14px;border-right:0;border-bottom:0}
+.th-corner.tr{top:14px;right:14px;border-left:0;border-bottom:0}
+.th-corner.bl{bottom:14px;left:14px;border-right:0;border-top:0}
+.th-corner.br{bottom:14px;right:14px;border-left:0;border-top:0}
+.th-osd{position:absolute;pointer-events:none;font-family:var(--f-mono);color:var(--cream)}
+.th-osd.top{top:22px;left:48px;font-size:11px;letter-spacing:.14em;display:flex;gap:22px;align-items:center}
+.th-osd .rec{width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block;margin-right:8px;animation:blink 1.4s infinite}
+.th-scale{position:absolute;top:60px;right:46px;bottom:60px;width:14px;border:1px solid rgba(239,233,219,.4);pointer-events:none;
+  /* легенда ИК-палитры — это часть данных тепловизора */
+  background:linear-gradient(to top,#050f45,#16407a,#108a96,#6cb24a,#e8d64a,#f49e1a,#e03c20,#ffffff)}
+.th-scale-labels{position:absolute;top:56px;right:66px;bottom:56px;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between;font-family:var(--f-mono);font-size:10.5px;color:var(--cream)}
+.th-status{position:absolute;left:48px;bottom:24px;font-size:11.5px;letter-spacing:.12em;color:var(--amber)}
+.th-coord{position:absolute;right:46px;bottom:24px;font-size:10.5px;letter-spacing:.1em;color:rgba(239,233,219,.55)}
+.th-hint{position:absolute;left:50%;bottom:56px;transform:translateX(-50%);background:rgba(10,11,13,.78);border:1px solid var(--line-d);padding:11px 18px;font-family:var(--f-mono);font-size:12px;letter-spacing:.05em;color:var(--cream);white-space:nowrap;max-width:92%;overflow:hidden;text-overflow:ellipsis;transition:opacity .4s}
+.th-hint.hide{opacity:0}
+.th-cta{position:absolute;left:50%;bottom:22px;transform:translateX(-50%) translateY(14px);opacity:0;pointer-events:none;transition:.45s}
+.th-cta.show{opacity:1;transform:translateX(-50%);pointer-events:auto}
+.th-cta .btn{padding:13px 20px;font-size:12px}
+.th-specs{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d)}
+.th-specs li{padding:24px 22px 24px 0;display:flex;gap:16px}
+.th-specs li+li{padding-left:22px;border-left:1px solid var(--line-d)}
+.th-specs .n{font-family:var(--f-mono);font-size:12px;color:var(--amber);letter-spacing:.08em}
+.th-specs b{display:block;font-family:var(--f-head);font-weight:600;text-transform:uppercase;font-size:16px;letter-spacing:.02em;margin-bottom:6px;color:var(--cream)}
+.th-specs span{font-size:13.5px;color:var(--cream-soft);line-height:1.5;display:block}
+.th-meters{margin-top:26px;display:flex;gap:14px 0;flex-wrap:wrap;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream)}
+.th-meters li{display:flex;align-items:center}
+.th-meters li+li::before{content:"";width:26px;height:1px;background:var(--amber);margin:0 18px}
+.th-meters b{color:var(--amber);font-size:20px;margin-right:8px;font-weight:700}
+
+/* ============ ОБО МНЕ ============ */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.card-id{border:1.5px solid var(--ink);background:var(--paper);box-shadow:8px 8px 0 rgba(25,26,28,.12);padding:30px 30px 24px;position:relative}
+.card-id::before{content:"";position:absolute;inset:7px;border:1px solid #C9C1AB;pointer-events:none}
+.card-id .ci-tag{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;color:var(--amber-deep);margin-bottom:22px}
+/* фото мастера: янтарный дуотон, при наведении — цвет */
+.card-id .ci-photo{position:relative;height:250px;border:1px solid #C9C1AB;margin-bottom:22px;overflow:hidden;background:repeating-linear-gradient(45deg,#E4DECB 0 10px,#E9E4D4 10px 20px)}
+.card-id .ci-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;filter:grayscale(1) sepia(.42) saturate(1.9) hue-rotate(-12deg) contrast(1.06);transition:filter .5s ease}
+.card-id .ci-photo:hover img,.card-id .ci-photo:focus-within img{filter:none}
+.card-id .ci-photo.noimg{display:grid;place-items:center}
+.card-id .ci-photo.noimg::after{content:"ФОТО МАСТЕРА · НА ОБЪЕКТЕ";font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:#8A836F}
+.ci-cap{position:absolute;left:10px;bottom:10px;z-index:2;background:rgba(25,26,28,.86);color:var(--cream);font-family:var(--f-mono);font-size:9.5px;letter-spacing:.16em;padding:6px 10px;pointer-events:none}
+.card-id .ci-name{font-family:var(--f-head);font-weight:600;font-size:30px;text-transform:uppercase;line-height:1.05}
+.card-id .ci-role{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;color:var(--amber-deep);margin:6px 0 20px}
+.ci-rows{border-top:1px solid #C9C1AB}
+.ci-rows div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid #C9C1AB;font-size:13.5px}
+.ci-rows dt{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;color:var(--ink-soft);text-transform:uppercase;padding-top:2px}
+.ci-rows dd{font-weight:600;text-align:right}
+.ci-bar{margin-top:22px;height:34px;
+  background:repeating-linear-gradient(90deg,#191A1C 0 2px,transparent 2px 5px,#191A1C 5px 9px,transparent 9px 12px,#191A1C 12px 13px,transparent 13px 18px)}
+.about-facts{border-top:1px solid var(--line-l)}
+.about-facts li{display:grid;grid-template-columns:64px 1fr;gap:22px;padding:26px 0;border-bottom:1px solid var(--line-l)}
+.about-facts .n{font-family:var(--f-mono);font-size:12.5px;color:var(--amber-deep);letter-spacing:.1em;padding-top:5px}
+.about-facts b{display:block;font-family:var(--f-head);font-weight:600;text-transform:uppercase;font-size:21px;letter-spacing:.02em;margin-bottom:8px}
+.about-facts p{font-size:15.5px}
+.counters{margin-top:52px;display:flex;flex-wrap:wrap;border:1px solid var(--line-l)}
+.counters li{flex:1 1 200px;padding:26px 28px;display:flex;align-items:baseline;gap:10px}
+.counters li+li{border-left:1px solid var(--line-l)}
+.counters .val{font-family:var(--f-head);font-weight:600;font-size:46px;line-height:1;color:var(--ink)}
+.counters .suf{font-family:var(--f-head);font-weight:600;font-size:22px;color:var(--amber-deep)}
+.counters .lbl{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-left:6px}
+
+/* ============ ЭТАПЫ ============ */
+.steps-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:64px}
+.steps-head .sec-head{margin-bottom:0}
+.steps-note{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-soft);padding-bottom:10px}
+.steps{position:relative;padding-left:0}
+.steps-rail{position:absolute;left:21px;top:10px;bottom:10px;width:2px;background:#2C2E33}
+.steps-rail i{position:absolute;top:0;left:0;width:100%;height:0;background:var(--amber);transition:height .2s linear}
+.step{position:relative;display:grid;grid-template-columns:44px 1fr;gap:30px;padding-bottom:52px}
+.step:last-child{padding-bottom:0}
+.step-node{width:44px;height:44px;border:2px solid #2C2E33;background:var(--bg-dark2);border-radius:3px;display:grid;place-items:center;font-family:var(--f-mono);font-size:13px;font-weight:700;color:#6E6A5E;transition:border-color .35s,color .35s;position:relative;z-index:1}
+.step.on .step-node{border-color:var(--amber);color:var(--amber)}
+.step-body{padding-top:4px}
+.step-body h3{font-family:var(--f-head);font-weight:600;text-transform:uppercase;font-size:25px;letter-spacing:.02em;margin-bottom:10px}
+.step-body h3 em{font-style:normal;font-family:var(--f-mono);font-size:12px;font-weight:400;letter-spacing:.1em;color:var(--amber);margin-left:14px}
+.step-body p{max-width:660px;font-size:16px}
+
+/* ============ ПРОМЫШЛЕННОСТЬ ============ */
+.ind-lead{max-width:780px}
+.specs{margin-top:14px;border-top:1.5px solid var(--ink)}
+.specs li{display:grid;grid-template-columns:86px 1fr;gap:26px;padding:30px 0;border-bottom:1px solid var(--line-l)}
+.specs .n{font-family:var(--f-mono);font-size:13px;color:var(--amber-deep);letter-spacing:.1em;padding-top:6px}
+.specs b{display:block;font-family:var(--f-head);font-weight:600;text-transform:uppercase;font-size:22px;letter-spacing:.02em;margin-bottom:8px}
+.specs p{font-size:15.5px;max-width:720px}
+.brands{margin:44px 0 8px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.brands .bl{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-right:10px}
+.brands span{font-family:var(--f-mono);font-size:13px;font-weight:700;letter-spacing:.08em;border:1px solid #B4AC95;padding:9px 16px;border-radius:2px;transition:border-color .2s,color .2s}
+.brands span:hover{border-color:var(--amber-deep);color:var(--amber-deep)}
+.ind-note{margin-top:36px;font-size:18px;max-width:720px}
+.ind-cta{margin-top:34px}
+
+/* ============ КОНТАКТЫ ============ */
+.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:start}
+.field{margin-bottom:22px}
+.field label{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-soft);margin-bottom:9px}
+.field input,.field textarea{width:100%;background:#15171B;border:1px solid #2E3136;border-radius:2px;color:var(--cream);font-family:var(--f-body);font-size:16px;padding:15px 16px;transition:border-color .2s}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--amber)}
+.field.invalid input{border-color:#E23B23}
+.field .err{display:none;font-family:var(--f-mono);font-size:11.5px;color:#F0664C;margin-top:7px}
+.field.invalid .err{display:block}
+.form-note{display:none;margin-top:20px;padding:15px 18px;border:1px solid var(--amber);border-radius:2px;font-family:var(--f-mono);font-size:13px;color:var(--amber)}
+.form-note.show{display:block}
+.contact-side h3{font-family:var(--f-head);font-weight:600;text-transform:uppercase;font-size:26px;margin-bottom:22px}
+/* мини-карточка мастера у телефона */
+.side-master{display:flex;align-items:center;gap:16px;margin-bottom:30px}
+.side-photo{width:68px;height:68px;flex:none;object-fit:cover;object-position:center 25%;border:1px solid #3A3D43;border-radius:3px;filter:grayscale(1) sepia(.42) saturate(1.9) hue-rotate(-12deg);transition:filter .5s ease}
+.side-master:hover .side-photo{filter:none}
+.side-master p{margin:0;font-size:14.5px;color:var(--cream-soft)}
+.side-master b{display:block;color:var(--cream);font-family:var(--f-head);font-weight:600;font-size:19px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:2px}
+.big-phone{display:inline-flex;align-items:center;gap:16px;font-family:var(--f-head);font-weight:600;font-size:clamp(28px,3.4vw,40px);letter-spacing:.02em;border-bottom:3px solid var(--amber);padding-bottom:8px;cursor:pointer;transition:color .2s}
+.big-phone:hover{color:var(--amber)}
+.big-phone svg.lucide{width:26px;height:26px;color:var(--amber)}
+.side-sub{margin:18px 0 30px;font-size:15.5px;color:var(--cream-soft)}
+.side-sub b{color:var(--cream)}
+.messengers{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+.messengers a{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:15px 22px;border:1px solid #4A4C52;border-radius:2px;transition:border-color .2s,color .2s}
+.messengers a:hover{border-color:var(--amber);color:var(--amber)}
+.messengers svg.lucide{width:17px;height:17px;color:var(--amber)}
+.guar{border-left:2px solid var(--amber);padding:4px 0 4px 20px;font-size:15px;color:var(--cream-soft);max-width:380px}
+
+/* ============ ФУТЕР ============ */
+footer{border-top:1px solid var(--line-d);padding:26px 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;color:#7E7A6E}
+.foot a{color:var(--cream);border-bottom:1px solid #4A4C52;transition:color .2s,border-color .2s}
+.foot a:hover{color:var(--amber);border-color:var(--amber)}
+.foot .ok{display:flex;align-items:center;gap:10px;color:var(--amber)}
+.foot .ok::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);animation:blink 2s infinite}
+
+/* ============ ТОСТЫ ============ */
+#toasts{position:fixed;right:22px;bottom:22px;z-index:120;display:flex;flex-direction:column;gap:10px;max-width:min(400px,calc(100vw - 44px))}
+.toast{display:flex;align-items:flex-start;gap:12px;background:#191B20;border:1px solid #34373D;border-left:3px solid var(--amber);border-radius:3px;padding:15px 18px;font-size:14.5px;color:var(--cream);box-shadow:0 14px 34px rgba(0,0,0,.5);transform:translateX(24px);opacity:0;transition:transform .35s cubic-bezier(.2,.8,.3,1),opacity .35s}
+.toast.in{transform:none;opacity:1}
+.toast svg.lucide{width:18px;height:18px;color:var(--amber);flex:none;margin-top:2px}
+
+/* ============ REVEAL ============ /* прячем контент ТОЛЬКО если JS жив (класс .js из <head>) */
+.js [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.js [data-reveal].in{opacity:1;transform:none}
+
+/* ============ АДАПТИВ ============ */
+@media (max-width:1060px){
+  .nav-links{display:none}
+  .burger{display:grid}
+  .hero-in{grid-template-columns:1fr;gap:52px}
+  .hero{padding-top:120px}
+  .th-specs{grid-template-columns:1fr 1fr}
+  .th-specs li{padding:20px 16px 20px 0}
+  .th-specs li:nth-child(even){padding-left:20px}
+  .th-specs li:nth-child(n+3){border-top:1px solid var(--line-d)}
+  .th-specs li:nth-child(3){border-left:0;padding-left:0}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:52px}
+  .card-id{max-width:440px}
+}
+@media (max-width:640px){
+  section{padding:80px 0}
+  .wrap{padding:0 20px}
+  .nav-phone span{display:none}
+  .acc-head{grid-template-columns:44px 1fr;gap:14px}
+  .acc-chev{display:none}
+  .acc-content{padding-left:0}
+  .acc-list{columns:1}
+  .th-scale{right:16px}
+  .th-scale-labels{right:36px}
+  .th-osd.top{left:20px;gap:12px;font-size:10px}
+  .th-status{left:20px}
+  .th-coord{display:none}
+  .th-specs{grid-template-columns:1fr}
+  .th-specs li{border-left:0!important;padding-left:0!important;border-top:1px solid var(--line-d)}
+  .th-specs li:first-child{border-top:0}
+  .counters li{flex:1 1 100%;border-left:0!important;border-top:1px solid var(--line-l)}
+  .counters li:first-child{border-top:0}
+  .specs li{grid-template-columns:1fr;gap:8px}
+  .hero-cta .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .marquee-track,.flow,.th-scale+.rec{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div id="toasts" aria-live="polite"></div>
+
+<!-- ======= НАВИГАЦИЯ ======= -->
+<header class="nav" id="navBar">
+  <div class="nav-in">
+    <a href="#top" class="brand" aria-label="Наверх">
+      <span class="brand-mark"><i data-lucide="zap"></i></span>
+      <span class="brand-name">АНДРЕЙ<span>·</span>ЭЛЕКТРИК</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Услуги</a>
+      <a href="#thermal">Тепловизор</a>
+      <a href="#about">Обо мне</a>
+      <a href="#steps">Этапы</a>
+      <a href="#industry">Промышленность</a>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:+79938991849" class="nav-phone" data-copy="+79938991849"><i data-lucide="phone"></i><span>+7 (993) 899-18-49</span></a>
+      <button class="burger" id="navBurger" aria-label="Открыть меню">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mmenu" id="mobileMenu">
+  <a href="#services">Услуги <i data-lucide="arrow-up-right"></i></a>
+  <a href="#thermal">Тепловизор <i data-lucide="arrow-up-right"></i></a>
+  <a href="#about">Обо мне <i data-lucide="arrow-up-right"></i></a>
+  <a href="#steps">Этапы <i data-lucide="arrow-up-right"></i></a>
+  <a href="#industry">Промышленность <i data-lucide="arrow-up-right"></i></a>
+  <a href="#contact">Контакты <i data-lucide="arrow-up-right"></i></a>
+  <p class="mmeta">Инженер Андрей · <a href="tel:+79938991849" style="color:var(--amber)">+7 (993) 899-18-49</a></p>
+</div>
+
+<main>
+<!-- ======= HERO ======= -->
+<section class="hero dark" id="top">
+  <div class="hero-in">
+    <div class="hero-copy">
+      <p class="tag mono" data-reveal>// ЧАСТНЫЙ ИНЖЕНЕР-ЭЛЕКТРИК · АНДРЕЙ · 15+ ЛЕТ ПРАКТИКИ</p>
+      <p class="hero-q mono" data-reveal>Пропал свет? Не греет тёплый пол? Нужен надёжный электромонтаж?</p>
+      <h1 data-reveal>От розетки —<br>до промышленной<br><span class="stroke">автоматизации</span></h1>
+      <p class="lead" data-reveal>Меня зовут Андрей. Выполняю точную диагностику скрытых неисправностей тепловизором, работаю сам — без диспетчеров и бригад-посредников, даю официальную гарантию на все виды работ.</p>
+      <ul class="hero-facts mono" data-reveal>
+        <li>Диагностика тепловизором</li>
+        <li>Напрямую с мастером</li>
+        <li>Официальная гарантия</li>
+      </ul>
+      <div class="hero-cta" data-reveal>
+        <a href="#contact" class="btn btn-primary">Записаться на выезд <i data-lucide="arrow-down-right"></i></a>
+        <a href="#contact" class="btn btn-ghost prefill-consult">Бесплатная консультация</a>
+      </div>
+    </div>
+
+    <div class="hero-panel" data-reveal>
+      <!-- Интерактивная схема электрощита -->
+      <svg id="panelSvg" viewBox="0 0 460 540" role="group" aria-label="Интерактивная схема электрощита">
+        <rect x="6" y="6" width="448" height="528" rx="8" class="pn-box"/>
+        <rect x="18" y="18" width="424" height="504" rx="4" class="pn-inner"/>
+        <text x="34" y="44" class="pn-cap">ЩИТ УПРАВЛЕНИЯ</text>
+        <circle cx="414" cy="40" r="3.5" class="pn-net"/>
+        <text x="402" y="44" class="pn-tiny pn-right">NET</text>
+        <!-- ввод -->
+        <path d="M200 18 V40 M260 18 V40" class="pn-wire"/>
+        <text x="188" y="34" class="pn-tiny">L</text>
+        <text x="266" y="34" class="pn-tiny">N</text>
+        <!-- вводной рубильник -->
+        <g id="mainSw" class="clickable" tabindex="0" role="switch" aria-checked="false" aria-label="Вводной рубильник QF1">
+          <rect x="192" y="56" width="76" height="62" rx="5" class="pn-device"/>
+          <rect x="186" y="50" width="88" height="74" rx="7" class="pn-attention" id="mainAttention"/>
+          <rect x="212" y="96" width="36" height="13" rx="2" class="pn-flag-main"/>
+          <text x="230" y="130" class="pn-tiny pn-center">ВВОД · QF1</text>
+        </g>
+        <!-- провод к шине -->
+        <path d="M230 118 V148" class="pn-wire"/>
+        <path d="M230 44 V56 M230 118 V148" class="flow" id="liveIntro"/>
+        <!-- шина -->
+        <path d="M70 148 H390" class="pn-bus"/>
+        <path d="M70 148 H390" class="flow" id="liveBus"/>
+        <!-- приборная зона -->
+        <line x1="34" y1="336" x2="426" y2="336" class="pn-wire" style="stroke-width:1"/>
+        <rect x="34" y="352" width="186" height="84" rx="5" class="pn-device"/>
+        <text x="48" y="372" class="pn-tiny">НАПРЯЖЕНИЕ</text>
+        <text id="voltVal" x="48" y="418" class="pn-big">000.0</text>
+        <text x="196" y="418" class="pn-tiny">В</text>
+        <rect x="240" y="352" width="186" height="84" rx="5" class="pn-device"/>
+        <text x="254" y="372" class="pn-tiny">ТОК НАГРУЗКИ</text>
+        <path d="M309 424 A 24 24 0 0 1 357 424" class="pn-scale"/>
+        <g id="ammTicks"></g>
+        <line id="ammNeedle" x1="333" y1="424" x2="333" y2="401" class="pn-needle"/>
+        <circle cx="333" cy="424" r="3" class="pn-pin"/>
+        <text x="300" y="436" class="pn-tiny">0</text>
+        <text x="348" y="436" class="pn-tiny">25</text>
+        <text x="398" y="418" class="pn-tiny">А</text>
+        <!-- статус -->
+        <text id="statusLine" x="230" y="466" class="pn-status pn-center">СЕТЬ ОТКЛЮЧЕНА</text>
+        <text id="tipLine" x="230" y="486" class="pn-hint pn-center">щёлкните по рубильнику QF1 — подайте напряжение</text>
+      </svg>
+      <p class="panel-cap mono">интерактивная схема — рубильник и автоматы работают</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======= БЕГУЩАЯ СТРОКА ======= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<!-- ======= УСЛУГИ ======= -->
+<section class="light grid-paper" id="services">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="sec-tag mono">[ 01 · Услуги ]</p>
+      <h2>Надёжная электрика —<br>под ключ и в один заход</h2>
+      <p class="sec-lead">Собираю, чиню и автоматизирую электрику любой сложности: от замены розетки до промышленных контроллеров. Каждая задача начинается с точной диагностики — а не с гадания «где бы могло оборвать».</p>
+    </div>
+
+    <div class="acc" data-reveal>
+      <!-- 01. Дом и квартира -->
+      <div class="acc-item open">
+        <button class="acc-head" aria-expanded="true">
+          <span class="acc-num">/ 01</span>
+          <span>
+            <span class="acc-title">Для дома и квартиры</span>
+            <span class="acc-sub">Электромонтаж любой сложности · приёмка квартир от застройщика</span>
+          </span>
+          <span class="acc-chev"><i data-lucide="chevron-down"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-inner">
+          <div class="acc-content">
+            <p>Выполняю полный <strong>электромонтаж</strong> любой сложности. Если у вас в стенах старая <strong>скрытая проводка</strong>, <strong>искрят провода</strong> или <strong>стиральная машина выбивает автомат</strong> — устраню проблему раз и навсегда. Помогаю в приёмке новых квартир от застройщика: нахожу то, что строители спрятали за красивой отделкой.</p>
+            <ul class="acc-list">
+              <li>Профессиональная <strong>электрика в квартире</strong>, частном доме или офисе.</li>
+              <li>Комплексная <strong>сборка щита</strong>, <strong>ремонт щита</strong> и <strong>замена щитка</strong>.</li>
+              <li>Грамотная <strong>установка автомата</strong> и <strong>замена УЗО</strong> (дифференциальных автоматов).</li>
+              <li>Бытовые задачи: <strong>установить розетку</strong>, <strong>монтаж люстры на натяжной потолок</strong>, <strong>замена провода</strong>.</li>
+              <li>Безопасность: монтаж защитного <strong>заземления</strong> и полноценный <strong>контур заземления</strong>.</li>
+              <li><strong>Срочный выезд электрика</strong>: произошло <strong>короткое замыкание</strong>, нужна <strong>аварийка электросети</strong> — приеду максимально оперативно.</li>
+            </ul>
+            <div class="acc-actions">
+              <a href="#contact" class="btn btn-primary">Вызвать мастера <i data-lucide="arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 02. Тёплый пол -->
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-num">/ 02</span>
+          <span>
+            <span class="acc-title">Тёплый пол без разрушения ремонта</span>
+            <span class="acc-sub">Диагностика тепловизором · точность до 1 сантиметра</span>
+          </span>
+          <span class="acc-chev"><i data-lucide="chevron-down"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-inner">
+          <div class="acc-content">
+            <p><strong>Тёплый пол перестал греть?</strong> Не спешите сбивать всю плитку! Я провожу точную диагностику профессиональным тепловизором и нахожу место обрыва нагревательного кабеля с точностью до 1 сантиметра. Дальше — аккуратное вскрытие всего 1–2 плиток, ремонтное соединение с опрессовкой медными гильзами и 100% водостойкой изоляцией (термоусадочная муфта). Проверка системы на скрытые повреждения — и <strong>железная гарантия на муфту</strong>.</p>
+            <div class="acc-actions">
+              <a href="#thermal" class="btn btn-primary">Попробовать тепловизор <i data-lucide="crosshair"></i></a>
+            </div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 03. Коммерция и промышленность -->
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-num">/ 03</span>
+          <span>
+            <span class="acc-title">Коммерция, безопасность, промышленность</span>
+            <span class="acc-sub">Бизнес · ТСЖ · управляющие компании</span>
+          </span>
+          <span class="acc-chev"><i data-lucide="chevron-down"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-inner">
+          <div class="acc-content">
+            <p>Работаю с владельцами бизнеса, ТСЖ и управляющими компаниями — от слаботочных систем до пусконаладки промышленного оборудования.</p>
+            <ul class="acc-list">
+              <li><strong>Безопасность и сети:</strong> проектирование и монтаж систем <strong>видеонаблюдения</strong>, СКУД (контроль доступа), пожарно-охранной сигнализации (ПОС), ЛВС.</li>
+              <li>Установка систем газового и порошкового <strong>пожаротушения</strong>.</li>
+              <li>Система <strong>«Умный дом»</strong> — проектирую и настраиваю под ваши сценарии.</li>
+              <li><strong>Обслуживание коммерческих объектов</strong>, программирование контроллеров, пусконаладка.</li>
+              <li>Подключение <strong>электроприводов</strong>, ИБП, обслуживание ДЭС (1–3 степень автоматизации).</li>
+            </ul>
+            <div class="acc-actions">
+              <a href="#industry" class="btn btn-ghost">Промышленные задачи <i data-lucide="arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= ТЕПЛОВИЗОР ======= -->
+<section class="dark thermal" id="thermal">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="sec-tag mono">[ 02 · Диагностика тепловизором ]</p>
+      <h2>Тёплый пол не греет —<br>не спешите сбивать плитку</h2>
+      <p class="sec-lead">Слева — обычный пол: кабель под плиткой не видно. Возьмите объектив тепловизора и найдите точку, где горячая часть кабеля обрывается. Это ровно то, что я делаю на объекте — только с реальным полом и профессиональной камерой.</p>
+    </div>
+
+    <div class="th-stage" id="thStage" data-reveal>
+      <canvas id="thCanvas" aria-label="Интерактивное демо тепловизора: найдите точку обрыва тёплого пола"></canvas>
+      <span class="th-corner tl"></span><span class="th-corner tr"></span>
+      <span class="th-corner bl"></span><span class="th-corner br"></span>
+      <div class="th-osd top mono"><span><span class="rec"></span>ИК-КАМЕРА · LIVE</span><span>ДИАПАЗОН 20–48 °C</span></div>
+      <div class="th-scale"></div>
+      <div class="th-scale-labels mono"><span>48°</span><span>34°</span><span>20°</span></div>
+      <div class="th-status mono" id="thStatus">РЕЖИМ: ПОИСК ОБРЫВА · НАВЕДИТЕ ОБЪЕКТИВ</div>
+      <div class="th-coord mono" id="thCoord">СПУТ 1 · ТОЧНОСТЬ ±1 СМ</div>
+      <div class="th-hint mono" id="thHint">Ведите объектив по полу: горячий кабель «заканчивается» в точке обрыва — кликните по ней</div>
+      <div class="th-cta" id="thCta"><a href="#contact" class="btn btn-primary">Записаться на выезд с тепловизором <i data-lucide="arrow-up-right"></i></a></div>
+    </div>
+
+    <ul class="th-specs" data-reveal>
+      <li><span class="n">01/</span><div><b>Вскрытие 1–2 плиток</b><span>Ваш ремонт остаётся целым — разрушения минимальны.</span></div></li>
+      <li><span class="n">02/</span><div><b>Ремонтное соединение</b><span>Надёжное восстановление кабеля, никаких скруток.</span></div></li>
+      <li><span class="n">03/</span><div><b>Гильза + термоусадка</b><span>Опрессовка медными гильзами, 100% водостойкая муфта.</span></div></li>
+      <li><span class="n">04/</span><div><b>Проверка и гарантия</b><span>Тест на скрытые повреждения, гарантия на муфту.</span></div></li>
+    </ul>
+    <ul class="th-meters" data-reveal>
+      <li><b>±1</b> см — точность локализации</li>
+      <li><b>≈3</b> часа — время всей работы</li>
+      <li><b>1–2</b> плитки — весь объём вскрытия</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======= ОБО МНЕ ======= -->
+<section class="light grid-paper" id="about">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="sec-tag mono">[ 03 · Обо мне ]</p>
+      <h2>Почему мне доверяют<br>сложные объекты и уютный дом</h2>
+      <p class="sec-lead">Я — электрик-профессионал и сертифицированный инженер, который постоянно повышает квалификацию и изучает новые технологии. Моя цель — чтобы электрика работала безопасно, долго и без вашего вмешательства.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="card-id" data-reveal>
+        <p class="ci-tag">СЛУЖЕБНАЯ КАРТОЧКА · МАСТЕР</p>
+        <!-- Фото мастера: файл master.jpg лежит рядом с index.html -->
+        <figure class="ci-photo">
+          <img src="master.jpg" alt="Инженер-электрик Андрей на объекте — обслуживание электрощитов управления" loading="lazy" onerror="this.closest('.ci-photo').classList.add('noimg');this.remove()">
+          <figcaption class="ci-cap">НА ОБЪЕКТЕ · ЩИТ УПРАВЛЕНИЯ</figcaption>
+        </figure>
+        <p class="ci-name">Андрей</p>
+        <p class="ci-role">ИНЖЕНЕР-ЭЛЕКТРИК · АСУ ТП</p>
+        <dl class="ci-rows">
+          <div><dt>Стаж</dt><dd>более 15 лет</dd></div>
+          <div><dt>Формат</dt><dd>частный мастер</dd></div>
+          <div><dt>Специализация</dt><dd>монтаж · диагностика · автоматизация</dd></div>
+          <div><dt>Инструмент</dt><dd>профессиональный + тепловизор</dd></div>
+          <div><dt>Гарантия</dt><dd>официальная, на все работы</dd></div>
+        </dl>
+        <div class="ci-bar" aria-hidden="true"></div>
+      </div>
+
+      <ul class="about-facts" data-reveal>
+        <li><span class="n">/ 01</span><div><b>Опыт более 15 лет</b><p>За плечами — сотни сданных объектов: от квартир до крупных госзаказов и сложных пусконаладочных работ в промышленности.</p></div></li>
+        <li><span class="n">/ 02</span><div><b>Работаю сам</b><p>Я — частный электрик. Вы общаетесь напрямую с мастером: без глухих телефонов, диспетчеров и переплат бригадам-посредникам.</p></div></li>
+        <li><span class="n">/ 03</span><div><b>Высокотехнологичный подход</b><p>Полный набор дорогостоящего профессионального инструмента: монтаж, программирование контроллеров, глубокая диагностика — включая профессиональный тепловизор.</p></div></li>
+        <li><span class="n">/ 04</span><div><b>Закупка материалов</b><p>Помогу с грамотным подбором и приобретением качественных материалов со скидками — без навязывания «выгодных» брендов.</p></div></li>
+        <li><span class="n">/ 05</span><div><b>Всегда на связи</b><p>Случилось замыкание, срочно нужен аварийный электрик? Вызовите меня по телефону — и я решу проблему, а не поставлю вас в очередь.</p></div></li>
+      </ul>
+    </div>
+
+    <ul class="counters" data-reveal>
+      <li><span class="count val" data-to="15">0</span><span class="suf">+</span><span class="lbl">лет практики</span></li>
+      <li><span class="count val" data-to="300">0</span><span class="suf">+</span><span class="lbl">сданных объектов</span></li>
+      <li><span class="count val" data-to="1">0</span><span class="suf">см</span><span class="lbl">точность диагностики</span></li>
+      <li><span class="count val" data-to="3">0</span><span class="suf">часа</span><span class="lbl">ремонт муфты</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======= ЭТАПЫ ======= -->
+<section class="dark" id="steps">
+  <div class="wrap">
+    <div class="steps-head" data-reveal>
+      <div class="sec-head">
+        <p class="sec-tag mono">[ 04 · Как проходит работа ]</p>
+        <h2>4 шага к безопасной<br>электрике</h2>
+      </div>
+      <p class="steps-note mono">от заявки до гарантии — без сюрпризов по смете</p>
+    </div>
+
+    <div class="steps" id="stepsWrap">
+      <div class="steps-rail"><i id="stepsFill"></i></div>
+      <div class="step" data-reveal>
+        <div class="step-node"><span>01</span></div>
+        <div class="step-body"><h3>Заявка и консультация<em>≈10 минут</em></h3><p>Вы связываетесь со мной, и мы обсуждаем вашу задачу: нужен ли вам срочный электрик, расчёт проекта или ремонт оборудования.</p></div>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-node"><span>02</span></div>
+        <div class="step-body"><h3>Выезд и точная диагностика<em>с тепловизором</em></h3><p>Приезжаю на объект со всем необходимым инструментом. Провожу аудит электросети и нахожу причину поломки — а не её следствия.</p></div>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-node"><span>03</span></div>
+        <div class="step-body"><h3>Смета и работа<em>цена фиксируется</em></h3><p>Мы фиксируем прозрачную стоимость работ и материалов до начала. После этого я выполняю монтаж, ремонт или программирование.</p></div>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-node"><span>04</span></div>
+        <div class="step-body"><h3>Проверка и гарантия<em>официально</em></h3><p>Тестируем систему под напряжением. Вы принимаете работу, получаете консультацию по эксплуатации и гарантию на выполненные услуги.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= ПРОМЫШЛЕННОСТЬ ======= -->
+<section class="light grid-paper" id="industry">
+  <div class="wrap">
+    <div class="sec-head ind-lead" data-reveal>
+      <p class="sec-tag mono">[ 05 · Для бизнеса ]</p>
+      <h2>Модернизация и автоматизация — без простоев</h2>
+      <p class="sec-lead ind-lead">Сломалось дорогое импортное оборудование? Нужно запустить производственную линию? Берусь за нестандартные промышленные задачи.</p>
+    </div>
+
+    <ul class="specs" data-reveal>
+      <li><span class="n">/ 01</span><div><b>Частотные преобразователи</b><p>Монтаж и настройка. Подбор и замена сгоревших импортных частотников на доступные отечественные аналоги — без потери характеристик линии.</p></div></li>
+      <li><span class="n">/ 02</span><div><b>Постоянное техобслуживание</b><p>Беру объекты на регулярное сервисное обслуживание. Реакция на аварию — напрямую, без ожидания «свободного диспетчера».</p></div></li>
+      <li><span class="n">/ 03</span><div><b>Пусконаладка и интеграция</b><p>Автоматизация и встраивание новых систем в уже существующую инфраструктуру предприятия — без остановки смежных процессов.</p></div></li>
+      <li><span class="n">/ 04</span><div><b>Электроприводы, ИБП, ДЭС</b><p>Подключение и обслуживание приводов, источников бесперебойного питания, дизель-генераторов (1–3 степень автоматизации).</p></div></li>
+    </ul>
+
+    <div class="brands" data-reveal>
+      <span class="bl">Работаю с приводами:</span>
+      <span>BENARMO</span><span>AUMA</span><span>BELIMO</span><span>ГЗ-ОФ</span>
+    </div>
+
+    <p class="ind-note" data-reveal>Профессиональные <strong>услуги электрика</strong> и инженера-автоматизатора для непрерывной работы вашего бизнеса.</p>
+    <div class="ind-cta" data-reveal><a href="#contact" class="btn btn-primary">Обсудить задачу <i data-lucide="arrow-up-right"></i></a></div>
+  </div>
+</section>
+
+<!-- ======= КОНТАКТЫ ======= -->
+<section class="dark" id="contact">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="sec-tag mono">[ 06 · Связаться ]</p>
+      <h2>Не ждите, пока проблема<br>приведёт к аварии</h2>
+      <p class="sec-lead">Нужна <strong>электрика под ключ</strong>, сложный ремонт оборудования или просто хотите задать вопрос инженеру? Расскажите о своей задаче — бесплатно проконсультирую и сориентирую по стоимости работ.</p>
+    </div>
+
+    <div class="contact-grid">
+      <form id="leadForm" novalidate data-reveal>
+        <div class="field">
+          <label for="fName">Ваше имя</label>
+          <input type="text" id="fName" name="name" placeholder="Как к вам обращаться" autocomplete="name">
+          <span class="err">Подскажите, как к вам обращаться</span>
+        </div>
+        <div class="field">
+          <label for="fPhone">Телефон</label>
+          <input type="tel" id="fPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
+          <span class="err">Проверьте номер — по нему я перезвоню</span>
+        </div>
+        <div class="field">
+          <label for="fMsg">Опишите задачу</label>
+          <textarea id="fMsg" name="msg" placeholder="Например: тёплый пол в ванной перестал греть, плитку жалко…"></textarea>
+          <span class="err"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить заявку <i data-lucide="send"></i></button>
+        <p class="form-note" id="formNote">Заявка принята. Перезвоню в течение часа и отвечу на вопросы.</p>
+      </form>
+
+      <aside class="contact-side" data-reveal>
+        <div class="side-master">
+          <img class="side-photo" src="master.jpg" alt="Инженер-электрик Андрей" loading="lazy" onerror="this.style.display='none'">
+          <p><b>Инженер Андрей</b>на связи ежедневно 9:00–21:00. Если линия занята — перезвоню сам, оставьте заявку.</p>
+        </div>
+        <h3>Или свяжитесь напрямую</h3>
+        <a href="tel:+79938991849" class="big-phone" data-copy="+79938991849" title="Нажмите, чтобы скопировать">
+          <i data-lucide="phone"></i>+7 (993) 899-18-49
+        </a>
+        <p class="side-sub">Быстрее всего — мессенджер: пришлите фото проблемы или объекта, отвечу с ориентировкой по стоимости.</p>
+        <div class="messengers">
+          <a href="https://wa.me/79938991849" target="_blank" rel="noopener"><i data-lucide="message-circle"></i>WhatsApp</a>
+          <a href="https://t.me/Ofitcerov" target="_blank" rel="noopener"><i data-lucide="send"></i>Telegram</a>
+        </div>
+        <p class="guar">Все работы выполняются по договорённости с фиксированной сметой и официальной гарантией. Диагностика тепловизором — до того, как что-либо вскрываться начнёт.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2025 · ИНЖЕНЕР АНДРЕЙ — ЧАСТНЫЙ ЭЛЕКТРОМОНТАЖ И АВТОМАТИЗАЦИЯ</span>
+    <a href="tel:+79938991849">+7 (993) 899-18-49</a>
+    <span class="ok">НАПРЯЖЕНИЕ В НОРМЕ · 220 В</span>
+  </div>
+</footer>
+
+<script>
+/* ==================== УТИЛИТЫ ==================== */
+const qs = s => document.querySelector(s);
+const qsa = s => [...document.querySelectorAll(s)];
+const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+
+/* детерминированный генератор случайных чисел (для стабильной «плитки») */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+
+/* ==================== ТОСТЫ ==================== */
+function toast(msg, icon='check'){
+  const box = qs('#toasts');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.innerHTML = `<i data-lucide="${icon}"></i><span>${msg}</span>`;
+  box.appendChild(t);
+  try{ lucide.createIcons(); }catch(e){}
+  requestAnimationFrame(()=> t.classList.add('in'));
+  setTimeout(()=>{ t.classList.remove('in'); setTimeout(()=> t.remove(), 400); }, 3800);
+}
+
+/* ==================== НАВИГАЦИЯ ==================== */
+const navBar = qs('#navBar');
+addEventListener('scroll', ()=> navBar.classList.toggle('scrolled', scrollY > 24), {passive:true});
+navBar.classList.toggle('scrolled', scrollY > 24);
+
+/* иконки меню вшиты в код — не зависят от внешних серверов */
+const MENU_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>';
+const X_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>';
+
+const mmenu = qs('#mobileMenu'), burger = qs('#navBurger');
+burger.addEventListener('click', ()=>{
+  const open = mmenu.classList.toggle('open');
+  burger.innerHTML = open ? X_SVG : MENU_SVG;
+  burger.setAttribute('aria-label', open?'Закрыть меню':'Открыть меню');
+});
+qsa('#mobileMenu a').forEach(a=> a.addEventListener('click', ()=>{
+  mmenu.classList.remove('open');
+  burger.innerHTML = MENU_SVG;
+}));
+
+/* подсветка активного раздела */
+const spy = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      qsa('#navLinks a').forEach(a=> a.classList.toggle('active', a.getAttribute('href') === '#'+en.target.id));
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'});
+['services','thermal','about','steps','industry','contact'].forEach(id=>{ const el = qs('#'+id); if(el) spy.observe(el); });
+
+/* ==================== REVEAL ==================== */
+const rev = new IntersectionObserver(es=> es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); rev.unobserve(e.target);} }), {threshold:.12});
+qsa('[data-reveal]').forEach(el=> rev.observe(el));
+
+/* ==================== БЕГУЩАЯ СТРОКА ==================== */
+(function(){
+  const words = ['ЭЛЕКТРОМОНТАЖ','СБОРКА ЩИТОВ','ЗАМЕНА ПРОВОДКИ','ТЁПЛЫЙ ПОЛ','ВИДЕОНАБЛЮДЕНИЕ','СКУД','ПОЖАРНАЯ СИГНАЛИЗАЦИЯ','УМНЫЙ ДОМ','ПУСКОНАЛАДКА','ЧАСТОТНИКИ','ЗАЗЕМЛЕНИЕ','АВАРИЙНЫЙ ВЫЕЗД'];
+  const group = words.map((w,i)=> `<span class="${i%3===1?'a':''}">${w}</span>`).join('<span>/</span>');
+  qs('#marqueeTrack').innerHTML = `<div class="mgroup">${group}<span>/</span></div><div class="mgroup">${group}<span>/</span></div>`;
+})();
+
+/* ==================== АККОРДЕОН ==================== */
+qsa('.acc-item').forEach(item=>{
+  const head = item.querySelector('.acc-head');
+  head.addEventListener('click', ()=>{
+    const willOpen = !item.classList.contains('open');
+    qsa('.acc-item').forEach(i=>{ i.classList.remove('open'); i.querySelector('.acc-head').setAttribute('aria-expanded','false'); });
+    if(willOpen){ item.classList.add('open'); head.setAttribute('aria-expanded','true'); }
+  });
+});
+
+/* кнопка «Бесплатная консультация» — подставляет текст в форму */
+qsa('.prefill-consult').forEach(b=> b.addEventListener('click', ()=>{
+  setTimeout(()=>{
+    const msg = qs('#fMsg');
+    if(msg && !msg.value){ msg.value = 'Здравствуйте! Хочу бесплатную консультацию по вопросу: '; msg.focus(); }
+  }, 600);
+}));
+
+/* ==================== СЧЁТЧИКИ ==================== */
+const cntIO = new IntersectionObserver(es=> es.forEach(e=>{
+  if(!e.isIntersecting) return;
+  cntIO.unobserve(e.target);
+  const el = e.target, to = +el.dataset.to, t0 = performance.now();
+  (function tick(now){
+    const t = clamp((now - t0)/1300, 0, 1);
+    el.textContent = Math.round(to * (1 - Math.pow(1 - t, 3)));
+    if(t < 1) requestAnimationFrame(tick);
+  })(t0);
+}), {threshold:.6});
+qsa('.count').forEach(el=> cntIO.observe(el));
+
+/* ==================== ТАЙМЛАЙН ЭТАПОВ ==================== */
+(function(){
+  const wrap = qs('#stepsWrap'), fill = qs('#stepsFill'), steps = qsa('.step');
+  function onScroll(){
+    const r = wrap.getBoundingClientRect(), vh = innerHeight;
+    fill.style.height = clamp(vh*0.72 - r.top, 0, r.height) + 'px';
+    steps.forEach(s=> s.classList.toggle('on', s.getBoundingClientRect().top + 44 < vh*0.72));
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  addEventListener('resize', onScroll);
+  onScroll();
+})();
+
+/* ==================== ТЕЛЕФОН: ЗВОНОК ИЛИ КОПИРОВАНИЕ ==================== */
+qsa('[data-copy]').forEach(el=>{
+  const isTel = el.tagName === 'A' && (el.getAttribute('href') || '').indexOf('tel:') === 0;
+  const coarse = matchMedia('(pointer:coarse)').matches; /* смартфон/планшет */
+  const copy = ()=>{
+    const val = el.dataset.copy;
+    if(navigator.clipboard){ navigator.clipboard.writeText(val).then(()=> toast('Телефон скопирован — ждём вашего звонка','copy')).catch(()=> toast('Телефон: '+val,'phone')); }
+    else toast('Телефон: '+val,'phone');
+  };
+  el.addEventListener('click', e=>{
+    /* на смартфоне tel-ссылка сразу звонит, на десктопе — копируем в буфер */
+    if(isTel && coarse) return;
+    e.preventDefault(); copy();
+  });
+  el.addEventListener('keydown', e=>{
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      if(isTel && coarse){ location.href = el.getAttribute('href'); }
+      else copy();
+    }
+  });
+});
+
+/* ==================== ФОРМА ==================== */
+(function(){
+  const form = qs('#leadForm');
+  const fields = { name: qs('#fName'), phone: qs('#fPhone'), msg: qs('#fMsg') };
+  const mark = (input, bad)=> input.closest('.field').classList.toggle('invalid', bad);
+  Object.values(fields).forEach(i=> i.addEventListener('input', ()=> mark(i,false)));
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    let ok = true;
+    if(fields.name.value.trim().length < 2){ mark(fields.name, true); ok = false; }
+    if(!/^\+?[\d\s\-()]{10,18}$/.test(fields.phone.value.trim())){ mark(fields.phone, true); ok = false; }
+    if(!ok){ toast('Заполните имя и телефон — остальное обсудим голосом','info'); return; }
+    /* Здесь подключите свою отправку: fetch на бэкенд, Telegram-бота или почтовый сервис */
+    qs('#formNote').classList.add('show');
+    toast('Заявка принята! Перезвоню в течение часа.','check');
+    form.reset();
+    setTimeout(()=> qs('#formNote').classList.remove('show'), 12000);
+  });
+})();
+
+/* ==================== ИНТЕРАКТИВНЫЙ ЩИТОК ==================== */
+(function(){
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = qs('#panelSvg');
+  const el = (tag, attrs, parent)=>{
+    const n = document.createElementNS(NS, tag);
+    for(const k in attrs) n.setAttribute(k, attrs[k]);
+    parent.appendChild(n); return n;
+  };
+  const txt = (parent, x, y, cls, s)=>{ const t = el('text',{x,y,class:cls},parent); t.textContent = s; return t; };
+
+  const BRK = [
+    {cx:100, name:'РОЗЕТКИ',            qf:'QF2', amps:3.2, icon:'socket'},
+    {cx:152, name:'ОСВЕЩЕНИЕ',          qf:'QF3', amps:1.6, icon:'lamp'},
+    {cx:204, name:'ТЁПЛЫЙ ПОЛ',         qf:'QF4', amps:8.4, icon:'floor'},
+    {cx:256, name:'ВИДЕО · СИГНАЛИЗАЦИЯ', qf:'QF5', amps:0.9, icon:'cam'},
+    {cx:308, name:'ЭЛЕКТРОПРИВОД',      qf:'QF6', amps:5.1, icon:'motor'},
+    {cx:360, name:'АСУ ТП',             qf:'QF7', amps:2.7, icon:'plc'},
+  ];
+
+  const icons = {
+    socket(g){ el('circle',{cx:0,cy:0,r:10},g); el('circle',{cx:-3.5,cy:-2,r:1.4},g); el('circle',{cx:3.5,cy:-2,r:1.4},g); el('line',{x1:-3,y1:5,x2:3,y2:5},g); },
+    lamp(g){ el('circle',{cx:0,cy:0,r:10},g); el('path',{d:'M-4 2 L-2 -3 L0 2 L2 -3 L4 2'},g); },
+    floor(g){ el('path',{d:'M-11 2 L-6.6 -4 L-2.2 2 L2.2 -4 L6.6 2 L11 -4'},g); },
+    cam(g){ el('rect',{x:-9,y:-6,width:14,height:12,rx:2},g); el('path',{d:'M5 -1 L11 -4 L11 4 L5 1'},g); el('circle',{cx:-2,cy:0,r:2},g); },
+    motor(g){ el('circle',{cx:0,cy:0,r:10},g); txt(g,0,3.5,'pn-center','M').setAttribute('style','font-size:9px;font-weight:700'); },
+    plc(g){ el('rect',{x:-9,y:-6,width:18,height:12,rx:2},g); el('line',{x1:-5,y1:6,x2:-5,y2:10},g); el('line',{x1:0,y1:6,x2:0,y2:10},g); el('line',{x1:5,y1:6,x2:5,y2:10},g); },
+  };
+
+  /* генерируем автоматы, ветви и пиктограммы нагрузок */
+  BRK.forEach((b,i)=>{
+    const g = el('g',{class:'brk clickable on','data-i':i,tabindex:0,role:'switch','aria-checked':'true','aria-label':b.name},svg);
+    el('rect',{x:b.cx-22,y:168,width:44,height:68,rx:4,class:'pn-device'},g);
+    el('rect',{class:'flag',x:b.cx-13,y:181,width:26,height:9,rx:2},g);
+    el('circle',{class:'dot',cx:b.cx,cy:227,r:2.6},g);
+    txt(g,b.cx,252,'pn-tiny pn-center',b.qf);
+    el('path',{d:`M${b.cx} 236 V288`,class:'branch'},svg);
+    el('path',{d:`M${b.cx} 236 V288`,class:'flow branch-live','data-i':i},svg);
+    const lg = el('g',{class:'load','data-i':i,transform:`translate(${b.cx},302)`},svg);
+    icons[b.icon](lg);
+  });
+
+  /* деления амперметра */
+  (function(){
+    const ticks = qs('#ammTicks');
+    for(let k=0;k<=4;k++){
+      const a = (-60 + k*30) * Math.PI/180, cx = 333, cy = 424;
+      const x1 = cx + Math.sin(a)*21, y1 = cy - Math.cos(a)*21;
+      const x2 = cx + Math.sin(a)*27, y2 = cy - Math.cos(a)*27;
+      el('line',{x1,y1,x2,y2,class:'pn-scale'},ticks);
+    }
+  })();
+
+  /* состояние щитка */
+  const state = { main:false, brk: BRK.map(()=>true), everOn:false };
+  const mainSw = qs('#mainSw'), statusLine = qs('#statusLine'), tipLine = qs('#tipLine');
+  const TIP_DEFAULT = 'щёлкните по рубильнику и автоматам — схема интерактивна';
+
+  function update(){
+    svg.classList.toggle('on', state.main);
+    mainSw.classList.toggle('on', state.main);
+    mainSw.setAttribute('aria-checked', state.main);
+    qs('#liveIntro').classList.toggle('live', state.main);
+    qs('#liveBus').classList.toggle('live', state.main);
+    qsa('.brk').forEach(g=>{
+      const i = +g.dataset.i;
+      g.classList.toggle('on', state.brk[i] && state.main);
+      g.classList.toggle('off', !state.brk[i]);
+      g.setAttribute('aria-checked', state.brk[i]);
+    });
+    qsa('.branch-live').forEach(p=> p.classList.toggle('live', state.main && state.brk[+p.dataset.i]));
+    qsa('.load').forEach(g=> g.classList.toggle('live', state.main && state.brk[+g.dataset.i]));
+    const n = state.brk.filter(Boolean).length;
+    statusLine.textContent = state.main ? `СЕТЬ ПОД НАПРЯЖЕНИЕМ · 220 В · ${n}/6 ЛИНИЙ` : 'СЕТЬ ОТКЛЮЧЕНА · ВКЛЮЧИТЕ QF1';
+    if(state.main){ state.everOn = true; qs('#mainAttention').classList.add('hidden'); }
+    qs('#mainAttention').classList.toggle('hidden', state.everOn || state.main);
+  }
+
+  mainSw.addEventListener('click', ()=>{ state.main = !state.main; update(); });
+  mainSw.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); mainSw.click(); } });
+  qsa('.brk').forEach(g=>{
+    const i = +g.dataset.i;
+    const toggle = ()=>{
+      if(!state.main){
+        tipLine.textContent = 'СНАЧАЛА ВКЛЮЧИТЕ ВВОДНОЙ РУБИЛЬНИК QF1';
+        clearTimeout(toggle._t);
+        toggle._t = setTimeout(()=> tipLine.textContent = TIP_DEFAULT, 2200);
+        return;
+      }
+      state.brk[i] = !state.brk[i]; update();
+    };
+    g.addEventListener('click', toggle);
+    g.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
+    g.addEventListener('mouseenter', ()=>{
+      const b = BRK[i], active = state.main && state.brk[i];
+      tipLine.textContent = `${b.qf} · ${b.name} — ${active ? b.amps+' А · ЛИНИЯ АКТИВНА' : 'ЛИНИЯ ОТКЛЮЧЕНА'}`;
+    });
+    g.addEventListener('mouseleave', ()=> tipLine.textContent = TIP_DEFAULT);
+  });
+
+  /* живые приборы */
+  const voltEl = qs('#voltVal'), needle = qs('#ammNeedle');
+  let volt = 0, amps = 0;
+  setInterval(()=>{
+    const tv = state.main ? 220.4 : 0;
+    volt += (tv - volt)*0.22 + (state.main ? (Math.random()-0.5)*1.6 : 0);
+    volt = Math.max(0, volt);
+    voltEl.textContent = volt > 0.5 ? volt.toFixed(1) : '000.0';
+    voltEl.classList.toggle('hot', volt > 200);
+    const ta = state.main ? BRK.reduce((s,b,i)=> s + (state.brk[i] ? b.amps : 0), 0) : 0;
+    amps += (ta - amps)*0.16 + (state.main ? (Math.random()-0.5)*0.3 : 0);
+    const angle = -60 + clamp(amps/25, 0, 1)*120;
+    needle.setAttribute('transform', `rotate(${angle.toFixed(1)} 333 424)`);
+  }, 140);
+
+  update();
+})();
+
+/* ==================== ДЕМО ТЕПЛОВИЗОРА ==================== */
+(function(){
+  const stage = qs('#thStage'), cv = qs('#thCanvas'), ctx = cv.getContext('2d');
+  const statusEl = qs('#thStatus'), hintEl = qs('#thHint'), ctaEl = qs('#thCta');
+
+  let W=0, H=0, dpr=1, vis=null, ir=null, segs=[], brkPt=null;
+  let lens = {x:0, y:0, tx:0, ty:0, r:90};
+  let lastInput = 0, raf = null, visible = false, found = false, misses = 0, marks = [];
+
+  /* ИК-палитра (классическая «железная» шкала тепловизора) */
+  const STOPS = [
+    [0,   5, 15, 70],[.16,22,60,158],[.34,16,138,150],[.50,108,178,74],
+    [.64,232,214,74],[.78,244,158,26],[.90,224,60,32],[1,255,255,255]
+  ];
+  function tempColor(t){
+    t = clamp(t, 0, 1);
+    for(let i=1;i<STOPS.length;i++){
+      if(t <= STOPS[i][0]){
+        const a = STOPS[i-1], b = STOPS[i], f = (t - a[0])/((b[0]-a[0])||1);
+        return [a[1]+(b[1]-a[1])*f, a[2]+(b[2]-a[2])*f, a[3]+(b[3]-a[3])*f];
+      }
+    }
+    return [255,255,255];
+  }
+
+  function segDist(px, py, s){
+    const dx = s.x2-s.x1, dy = s.y2-s.y1, l2 = dx*dx+dy*dy;
+    let t = l2 ? ((px-s.x1)*dx + (py-s.y1)*dy)/l2 : 0;
+    t = clamp(t, 0, 1);
+    return Math.hypot(px - (s.x1+t*dx), py - (s.y1+t*dy));
+  }
+
+  /* температурное поле: змейка кабеля + «плохой контакт» в точке обрыва */
+  function tempAt(x, y){
+    let T = 21.5 + Math.sin(x*0.011 + Math.sin(y*0.017)*1.4)*Math.cos(y*0.009 + 1.7)*0.7;
+    for(const s of segs){
+      const d = segDist(x, y, s);
+      T += (s.hot ? 17.5 : 3.2) * Math.exp(-(d*d)/450);
+    }
+    const db = Math.hypot(x - brkPt.x, y - brkPt.y);
+    T += 8.5 * Math.exp(-(db*db)/162);
+    return T;
+  }
+
+  /* сцена: змейка нагревательного кабеля под плиткой */
+  function buildScene(){
+    const n = 8, x0 = W*0.13, x1 = W*0.87;
+    const xs = Array.from({length:n}, (_,i)=> x0 + (x1-x0)*i/(n-1));
+    const yTop = H*0.14, yBot = H*0.86;
+    const path = [[xs[0], yBot]];
+    for(let i=0;i<n;i++){
+      const yEnd = (i%2===0) ? yTop : yBot;
+      path.push([xs[i], yEnd]);
+      if(i < n-1) path.push([xs[i+1], yEnd]);
+    }
+    brkPt = { x: xs[3], y: yTop + (yBot-yTop)*0.36 };
+    segs = [];
+    let hot = true;
+    for(let j=0;j<path.length-1;j++){
+      const [xa,ya] = path[j], [xb,yb] = path[j+1];
+      const isBreak = Math.abs(xa-xb)<0.5 && Math.abs(xa-brkPt.x)<0.5 && brkPt.y>Math.min(ya,yb) && brkPt.y<Math.max(ya,yb);
+      if(isBreak){
+        segs.push({x1:xa,y1:ya,x2:xa,y2:brkPt.y,hot:true});
+        segs.push({x1:xb,y1:brkPt.y,x2:xb,y2:yb,hot:false});
+        hot = false;
+      } else segs.push({x1:xa,y1:ya,x2:xb,y2:yb,hot});
+    }
+  }
+
+  /* ИК-изображение (запекается один раз) */
+  function buildIR(){
+    ir = document.createElement('canvas'); ir.width = W; ir.height = H;
+    const ic = ir.getContext('2d');
+    const step = 3, tw = Math.ceil(W/step), th = Math.ceil(H/step);
+    const tmp = document.createElement('canvas'); tmp.width = tw; tmp.height = th;
+    const tc = tmp.getContext('2d');
+    const img = tc.createImageData(tw, th);
+    for(let j=0;j<th;j++) for(let i=0;i<tw;i++){
+      const T = tempAt(i*step + step/2, j*step + step/2);
+      const c = tempColor((T-20)/28);
+      const k = (j*tw + i)*4;
+      img.data[k]=c[0]; img.data[k+1]=c[1]; img.data[k+2]=c[2]; img.data[k+3]=255;
+    }
+    tc.putImageData(img, 0, 0);
+    ic.imageSmoothingEnabled = true; ic.imageSmoothingQuality = 'high';
+    ic.drawImage(tmp, 0, 0, W, H);
+  }
+
+  /* обычный вид: керамическая плитка, кабеля не видно */
+  function buildVIS(){
+    vis = document.createElement('canvas'); vis.width = W; vis.height = H;
+    const v = vis.getContext('2d');
+    const rnd = mulberry32(42);
+    v.fillStyle = '#877F6E'; v.fillRect(0,0,W,H);
+    const s = Math.max(64, W/12);
+    for(let y=0; y<H+s; y+=s) for(let x=0; x<W+s; x+=s){
+      v.fillStyle = `hsl(40, ${9 + rnd()*4}%, ${66 + rnd()*8}%)`;
+      v.fillRect(x+2, y+2, s-4, s-4);
+    }
+  }
+
+  function drawCross(c){
+    c.strokeStyle = 'rgba(255,255,255,.85)'; c.lineWidth = 1;
+    c.beginPath();
+    c.moveTo(lens.x-9, lens.y); c.lineTo(lens.x+9, lens.y);
+    c.moveTo(lens.x, lens.y-9); c.lineTo(lens.x, lens.y+9);
+    c.stroke();
+  }
+
+  function drawMarks(c, now){
+    /* временные замеры «в норме» */
+    marks = marks.filter(m => now - m.t < 1600);
+    marks.forEach(m=>{
+      const a = 1 - (now - m.t)/1600;
+      c.strokeStyle = `rgba(255,255,255,${a.toFixed(2)})`; c.lineWidth = 1;
+      c.beginPath();
+      c.moveTo(m.x-5, m.y-5); c.lineTo(m.x+5, m.y+5);
+      c.moveTo(m.x+5, m.y-5); c.lineTo(m.x-5, m.y+5);
+      c.stroke();
+      c.font = '600 11px "JetBrains Mono",monospace';
+      c.fillStyle = `rgba(255,255,255,${a.toFixed(2)})`;
+      c.fillText(m.temp.toFixed(1)+'° · норма', m.x+10, m.y-8);
+    });
+    if(!found) return;
+    /* найденный дефект: маркер + зона вскрытия */
+    c.setLineDash([5,5]);
+    c.strokeStyle = '#F5A623'; c.lineWidth = 2;
+    c.beginPath(); c.arc(brkPt.x, brkPt.y, 34, 0, 7); c.stroke();
+    c.fillStyle = 'rgba(245,166,35,.1)';
+    const zw = 178, zh = 112;
+    c.fillRect(brkPt.x - zw/2, brkPt.y - zh/2, zw, zh);
+    c.strokeRect(brkPt.x - zw/2, brkPt.y - zh/2, zw, zh);
+    c.setLineDash([]);
+    /* выноска */
+    const lx = brkPt.x + 44, ly = brkPt.y - 46;
+    c.strokeStyle = '#F5A623'; c.lineWidth = 1;
+    c.beginPath(); c.moveTo(brkPt.x+24, brkPt.y-24); c.lineTo(lx, ly); c.lineTo(lx+10, ly); c.stroke();
+    c.font = '700 12.5px "JetBrains Mono",monospace';
+    const label = 'ОБРЫВ КАБЕЛЯ · ±1 СМ';
+    const wlab = c.measureText(label).width;
+    c.fillStyle = 'rgba(10,11,13,.8)';
+    c.fillRect(lx+10, ly-11, wlab+14, 20);
+    c.fillStyle = '#F5A623';
+    c.fillText(label, lx+17, ly+3.5);
+    c.font = '600 10.5px "JetBrains Mono",monospace';
+    c.fillStyle = 'rgba(239,233,219,.9)';
+    c.fillText('вскрытие: 1–2 плитки', brkPt.x - 52, brkPt.y + zh/2 + 20);
+  }
+
+  function frame(now){
+    if(!visible){ raf = null; return; }
+    /* автопилот, если пользователь не трогает 4 секунды */
+    if(now - lastInput > 4000){
+      const t = (now - lastInput - 4000)/1000;
+      lens.tx = W/2 + Math.sin(t*0.55)*W*0.32;
+      lens.ty = H/2 + Math.sin(t*0.83 + 1.4)*H*0.30;
+    }
+    lens.x += (lens.tx - lens.x)*0.09;
+    lens.y += (lens.ty - lens.y)*0.09;
+
+    const c = ctx;
+    c.setTransform(dpr, 0, 0, dpr, 0, 0);
+    c.drawImage(vis, 0, 0, W, H);
+    /* объектив тепловизора */
+    c.save();
+    c.beginPath(); c.arc(lens.x, lens.y, lens.r, 0, 7); c.clip();
+    c.drawImage(ir, 0, 0, W, H);
+    c.restore();
+    c.strokeStyle = '#F5A623'; c.lineWidth = 2;
+    c.beginPath(); c.arc(lens.x, lens.y, lens.r, 0, 7); c.stroke();
+    drawCross(c);
+    /* температура в точке прицела */
+    const T = tempAt(lens.x, lens.y);
+    c.font = '700 14px "JetBrains Mono",monospace';
+    c.fillStyle = '#fff';
+    const osd = T.toFixed(1)+'°C';
+    c.fillText(osd, clamp(lens.x + lens.r*0.45, 8, W-60), clamp(lens.y - lens.r*0.45 - 8, 18, H-8));
+    drawMarks(c, now);
+    raf = requestAnimationFrame(frame);
+  }
+
+  function probe(x, y){
+    if(found) return;
+    if(Math.hypot(x - brkPt.x, y - brkPt.y) < 46){
+      found = true;
+      statusEl.textContent = 'ДЕФЕКТ ЛОКАЛИЗОВАН · ТОЧНОСТЬ ±1 СМ · РЕМОНТ ≈3 ЧАСА';
+      hintEl.classList.add('hide');
+      ctaEl.classList.add('show');
+      toast('Точное попадание! Здесь ставится ремонтная муфта — плитка остаётся целой.','crosshair');
+    } else {
+      marks.push({x, y, t: performance.now(), temp: tempAt(x, y)});
+      if(marks.length > 6) marks.shift();
+      misses++;
+      if(misses === 3) hintEl.textContent = 'Подсказка: ведите объектив вдоль горячей линии — обрыв там, где тепло «заканчивается»';
+    }
+  }
+
+  function pointerTo(e){
+    const r = cv.getBoundingClientRect();
+    return { x: e.clientX - r.left, y: e.clientY - r.top };
+  }
+  stage.addEventListener('pointermove', e=>{
+    const p = pointerTo(e); lens.tx = p.x; lens.ty = p.y; lastInput = performance.now();
+  });
+  stage.addEventListener('pointerdown', e=>{
+    const p = pointerTo(e); lens.tx = p.x; lens.ty = p.y; lastInput = performance.now(); probe(p.x, p.y);
+  });
+
+  /* пауза отрисовки вне вьюпорта */
+  new IntersectionObserver(es=> es.forEach(en=>{
+    visible = en.isIntersecting;
+    if(visible && !raf) raf = requestAnimationFrame(frame);
+  }), {threshold:.05}).observe(stage);
+
+  function init(){
+    W = stage.clientWidth; H = stage.clientHeight;
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    cv.width = W*dpr; cv.height = H*dpr;
+    buildScene(); buildIR(); buildVIS();
+    lens.r = clamp(Math.min(W,H)*0.17, 64, 130);
+    lens.x = lens.tx = W*0.32; lens.y = lens.ty = H*0.5;
+    lastInput = performance.now();
+    if(!raf && visible) raf = requestAnimationFrame(frame);
+  }
+  let rt; addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(init, 220); });
+  init();
+})();
+
+/* ==================== ИКОНКИ: отложенная загрузка + запасной сервер ==================== */
+window.addEventListener('load', function(){
+  var render = function(){ try{ lucide.createIcons(); }catch(e){} };
+  if(typeof lucide !== 'undefined'){ render(); return; }
+  /* основной CDN не ответил — пробуем запасной */
+  var s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/lucide@0.454.0/dist/umd/lucide.min.js';
+  s.onload = render;
+  document.head.appendChild(s);
+});
+try{ lucide.createIcons(); }catch(e){} /* если иконки уже в кэше и успели загрузиться */
+
+/* сигнал для страховки в <head>: основной скрипт исполнен, сайт жив */
+window.__siteReady = true;
+</script>
+</body>
+</html>
