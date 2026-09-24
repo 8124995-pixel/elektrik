@@ -12,6 +12,18 @@
 document.documentElement.classList.add('js');
 setTimeout(function(){ if(!window.__siteReady){ document.documentElement.classList.remove('js'); } }, 4000);
 </script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113011550', 'ym');
+
+    ym(113011550, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -372,6 +384,9 @@ footer{border-top:1px solid var(--line-d);padding:26px 0}
 </style>
 </head>
 <body>
+
+<!-- Yandex.Metrika counter (noscript-часть) -->
+<noscript><div><img src="https://mc.yandex.ru/watch/113011550" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
 <div id="toasts" aria-live="polite"></div>
 
@@ -780,6 +795,19 @@ const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
 /* детерминированный генератор случайных чисел (для стабильной «плитки») */
 function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 
+/* ==================== ЯНДЕКС.МЕТРИКА: цели ==================== */
+function reachGoal(id){ try{ if(typeof ym === 'function') ym(113011550, 'reachGoal', id); }catch(e){} }
+
+/* клики по телефону и мессенджерам — фиксируем как цели */
+document.addEventListener('click', e=>{
+  const a = e.target.closest('a[href]');
+  if(!a) return;
+  const h = a.getAttribute('href') || '';
+  if(h.indexOf('wa.me') > -1) reachGoal('whatsapp');
+  else if(h.indexOf('t.me') > -1) reachGoal('telegram');
+  else if(h.indexOf('tel:') === 0) reachGoal('zvonok');
+});
+
 /* ==================== ТОСТЫ ==================== */
 function toast(msg, icon='check'){
   const box = qs('#toasts');
@@ -913,6 +941,7 @@ qsa('[data-copy]').forEach(el=>{
     if(!/^\+?[\d\s\-()]{10,18}$/.test(fields.phone.value.trim())){ mark(fields.phone, true); ok = false; }
     if(!ok){ toast('Заполните имя и телефон — остальное обсудим голосом','info'); return; }
     /* Здесь подключите свою отправку: fetch на бэкенд, Telegram-бота или почтовый сервис */
+    reachGoal('zayavka'); /* цель Метрики: отправлена заявка */
     qs('#formNote').classList.add('show');
     toast('Заявка принята! Перезвоню в течение часа.','check');
     form.reset();
@@ -1223,6 +1252,7 @@ qsa('[data-copy]').forEach(el=>{
     if(found) return;
     if(Math.hypot(x - brkPt.x, y - brkPt.y) < 46){
       found = true;
+      reachGoal('demo_teplovizor'); /* цель Метрики: нашли обрыв в демо */
       statusEl.textContent = 'ДЕФЕКТ ЛОКАЛИЗОВАН · ТОЧНОСТЬ ±1 СМ · РЕМОНТ ≈3 ЧАСА';
       hintEl.classList.add('hide');
       ctaEl.classList.add('show');
